@@ -22,13 +22,7 @@ const FormSchema = {
             component: 'TextField',
             props: {
                 label: 'Имя'
-            },
-            items: [{
-                component: 'TextField',
-                props: {
-                    label: 'Фамилия'
-                }}
-            ]
+            }
         },
         {
             component: 'TextField',

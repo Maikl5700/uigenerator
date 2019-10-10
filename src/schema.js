@@ -29,16 +29,7 @@ export default {
                     props: {
                         label: 'Имя',
                         fullWidth: true
-                    },
-                    items: [
-                        {
-                            component: 'TextField',
-                            props: {
-                                label: 'Фамилия',
-                                fullWidth: true
-                            }
-                        }
-                    ]
+                    }
                 },
                 {
                     component: 'TextField',
@@ -86,11 +77,30 @@ export default {
                     }
                 },
                 {
-                    component: 'TextField',
+                    component: 'Grid',
                     props: {
-                        label: 'E-Mail',
-                        fullWidth: true
-                    }
+                        // label: 'E-Mail',
+                        // fullWidth: true,
+                        container: true,
+                        style: {
+                            height: '80%',
+                            backgroundColor: '#00ff00'
+                        }
+                    },
+                    items: [
+                        {
+                            component: 'Grid',
+                            props: {
+                                item: true,
+                                style: {
+                                    height: '90%',
+                                    backgroundColor: '#2c2c2c'
+                                },
+                                lg: 6,
+                                sm: 12
+                            }
+                        }
+                    ]
                 }
             ]
         },
