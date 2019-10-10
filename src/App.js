@@ -2,13 +2,12 @@ import React from 'react';
 import './App.css';
 import 'typeface-roboto';
 
-import Form from './components/Form';
+import GGrid from './components/GGrid'
+import schema from './schema'
 
 function App() {
   return (
-    <div>
-      <Form />
-    </div>
+    <GGrid schema={schema}/>
   );
 }
 

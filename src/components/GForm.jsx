@@ -21,21 +21,19 @@ const FormSchema = {
         {
             component: 'TextField',
             props: {
-                label: 'Имя',
-                style: {
-                    width: '49%',
-                    marginRight: '2%'
-                }
-            }
+                label: 'Имя'
+            },
+            items: [{
+                component: 'TextField',
+                props: {
+                    label: 'Фамилия'
+                }}
+            ]
         },
         {
             component: 'TextField',
             props: {
-                label: 'Фамилия',
-                // fullWidth: true,
-                style: {
-                    width: '49%'
-                }
+                label: 'Фамилия'
             }
         },
         {
@@ -51,7 +49,7 @@ const FormSchema = {
 
 
 
-export class Form extends Component {
+export class GForm extends Component {
     keyToProps(item, index) {
         return Object.assign(item.props, { key: index })
     }
@@ -70,4 +68,4 @@ export class Form extends Component {
     }
 }
 
-export default Form;
+export default GForm;
