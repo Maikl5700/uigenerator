@@ -9,7 +9,7 @@ export default {
         }
     },
     items: [
-        {   
+        {
             component: 'Grid',
             props: {
                 item: true,
@@ -39,15 +39,16 @@ export default {
                     }
                 },
                 {
-                    component: 'TextField',
+                    component: 'Button',
                     props: {
-                        label: 'E-Mail',
-                        fullWidth: true
-                    }
+                        onClick: (e) => { console.log(e) },
+                        variant: 'contained'
+                    },
+                    value: 'CLICK'
                 }
             ]
         },
-        {   
+        {
             component: 'Grid',
             props: {
                 item: true,

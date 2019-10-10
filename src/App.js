@@ -5,9 +5,13 @@ import 'typeface-roboto';
 import GGrid from './components/GGrid'
 import schema from './schema'
 
+import CreatedByClass from './components/createdByClass'
+
+
 function App() {
   return (
-    <GGrid schema={schema}/>
+    // <GGrid schema={schema} />
+    <CreatedByClass />
   );
 }
 
