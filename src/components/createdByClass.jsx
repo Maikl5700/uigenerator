@@ -1,16 +1,21 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
+import createReactClass from 'create-react-class';
 
 
-class createdByClass extends Component {
+const Contacts = createReactClass({
+    getInitialState() {
+        return {
+
+        };
+    },
     render() {
         return (
-            <div>
-                <h1>1123</h1>
-            </div>
+            <Fragment>
+                <h2>0</h2>
+                <button>CLICK</button>
+            </Fragment>
         );
     }
-}
+});
 
-
-
-export default createdByClass;
+export default Contacts;
