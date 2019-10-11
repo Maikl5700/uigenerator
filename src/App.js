@@ -1,18 +1,23 @@
-import React from 'react';
 import './App.css';
 import 'typeface-roboto';
 
-import GGrid from './components/GGrid'
-import schema from './schema'
+import React from 'react';
+import counterState from './store/countStore';
 
-import CreatedByClass from './components/createdByClass'
-
+import Counter1 from './components/Counter1'
+import Counter2 from './components/Counter2'
 
 function App() {
-  return (
-    // <GGrid schema={schema} />
-    <CreatedByClass />
-  );
+
+      return (
+        <div>
+          <Counter1 store={counterState}/>
+          <Counter2 store={counterState}/>
+        </div>
+      );
 }
 
 export default App;
+
+
+
