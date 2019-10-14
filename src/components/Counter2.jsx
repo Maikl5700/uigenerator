@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 
-const Counter = observer(class Counter extends Component {
+class Counter extends Component {
 
     incr = () => { this.props.store.increment() }
 
     render() {
-        return ( 
+        return (
             <div>
-                <h1 style={{margin:0}}>{this.props.store.count}</h1>
+                <h1 style={{ margin: 0 }}>{this.props.store.count}</h1>
                 <button onClick={this.incr}>+1</button>
             </div>
         );
     }
-})
+}
 
-export default Counter;
+export default inject('store')(observer(Counter));

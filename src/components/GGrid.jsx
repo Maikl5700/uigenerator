@@ -1,48 +1,54 @@
-import React, { Fragment } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import * as Components from '@material-ui/core'
-import Button from '@material-ui/core/Button'
+import { Provider, inject, observer } from 'mobx-react'
+import { observable } from 'mobx';
 
-function keyToProps(item, index) {
-  return Object.assign(item.props, { key: index })
-}
+const store = observable({})
 
+function renderItems(items, state) {
 
-function renderJsonArray(items) {
-
-  const array = []
-
+  const arItems = []
 
   items.forEach((item, i) => {
     let childs = null
 
+    if (item.state) {
+      console.log(item.state)
+    }
+
     // CHILDS
     if (item.items && item.items.length) {
-      childs = renderJsonArray(item.items)
+      childs = renderItems(item.items, item.state ? item.state : null)
     } else if (item.value && typeof item.value === 'string') {
       childs = item.value
     } else if (item.value && typeof item.value === 'number') {
       childs = item.value
     }
 
-    array.push(React.createElement(
-      Components[item.component],
+    arItems.push(React.createElement(
+      item.store ? inject(item.store)(observer(Components[item.component])) : Components[item.component],
       Object.assign(item.props, { key: i }),
       childs
     ))
   })
 
-  return array
+  return arItems
 }
 
 export default function GGrid({ schema }) {
+  // if (schema.store) {
+  //   let stores = {}
+  // }
+  // for (var key in schema.store) {
+  //   stores[key] = observable(schema.store[key])
+  // }
+
   return (
-    <Grid container {...schema.props}>
+    <Provider store={store}>
       {schema.items.map((item, i) => {
-        return React.createElement(Grid, keyToProps(item, i), renderJsonArray(item.items))
+        return React.createElement(Grid, Object.assign(item.props, { key: i }), renderItems(item.items, store))
       })}
-    </Grid>
-  );
+    </Provider>
+  )
 }
