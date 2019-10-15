@@ -1,16 +1,4 @@
 export default {
-    // store: {
-    //     counters: {
-    //         count: 0,
-    //         increment: function () {
-    //             this.count++
-    //         },
-    //         decrement: function () {
-    //             this.count--
-    //         }
-    //     },
-    //     formStore: {}
-    // },
     items: [
         {
             component: 'Grid',
@@ -42,7 +30,7 @@ export default {
                     props: {
                         item: true,
                         style: {
-                            height: '100%',
+                            height: '100px',
                             backgroundColor: '#ff0000',
                             width: '100%',
                             boxSizing: 'border-box',
@@ -66,31 +54,89 @@ export default {
                     items: [
                         {
                             component: 'TextField',
+                            name: 'txtfld1',
                             props: {
-                                label: 'Имя',
-                                fullWidth: true
-                            }
-                        },
-                        {
-                            component: 'TextField',
-                            props: {
-                                label: 'Фамилия',
-                                onInput: function () { console.log(this) },
-                                fullWidth: true,
-                                // value: this.props.store.count
-                            }
-                        },
-                        {
-                            component: 'Button',
-                            props: {
-                                onClick: function () { return console.log(this) },
-                                variant: 'contained'
+                                variant1: 'contained',
+                                value1: 'BTN'
                             },
-                            value: 'CLICK'
+                            state: {
+                                value1: 'FEFEF'
+                            }
                         }
                     ]
-                }
+                },
+                {
+                    component: 'Grid',
+                    name: 'grid_item2',
+                    props: {
+                        item: true,
+                        style: {
+                            height: '100px',
+                            backgroundColor: '#0000ff',
+                            width: '100%',
+                            boxSizing: 'border-box',
+                            border: '1px solid #000'
+                        },
+                        md: 6,
+                        sm: 12
+                    },
+                    state: {
+                        item: true,
+                        style: {
+                            height: '100%',
+                            backgroundColor: '#ff0000',
+                            width: '100%',
+                            boxSizing: 'border-box',
+                            border: '1px solid #000'
+                        },
+                        md: 6,
+                        sm: 12
+                    }
+                },
             ]
         }
     ]
 }
+
+                
+                    // items: [
+                    //     {
+                    //         component: 'TextField',
+                    //         name: 'text_field1',
+                    //         props: {
+                    //             label: 'Имя',
+                    //             fullWidth: true
+                    //         },
+                    //         state: {
+                    //             label: 'Имя',
+                    //             fullWidth: true
+                    //         }
+                    //     },
+                    //     {
+                    //         component: 'TextField',
+                    //         name: 'text_field2',
+                    //         props: {
+                    //             label: 'Фамилия',
+                    //             onInput: function () { console.log(this) },
+                    //             fullWidth: true,
+                    //             // value: this.props.store.count
+                    //         },
+                    //         state: {
+                    //             label: 'Имя',
+                    //             fullWidth: true
+                    //         }
+                    //     },
+                    //     {
+                    //         component: 'Button',
+                    //         name: 'button1',
+                    //         props: {
+                    //             onClick: function () { return console.log(this) },
+                    //             variant: 'contained'
+                    //         },
+                    //         state: {
+                    //             label: 'Имя',
+                    //             fullWidth: true
+                    //         },
+                    //         value: 'CLICK'
+                    //     }
+                    // ]
